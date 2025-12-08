@@ -1,285 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sathwik Kuchana – AI Engineer Portfolio</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<script src="https://kit.fontawesome.com/4f2d662c44.js" crossorigin="anonymous"></script>
-
-<style>
-    :root {
-        --bg: #0f0f15;
-        --card: #171722;
-        --text: #ffffff;
-        --accent: #6366f1;
-        --accent2: #8b5cf6;
-    }
-
-    [data-theme="light"] {
-        --bg: #f5f5f5;
-        --card: #ffffff;
-        --text: #111827;
-        --accent: #4f46e5;
-        --accent2: #6366f1;
-    }
-
-    body {
-        margin: 0;
-        font-family: "Poppins", sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        scroll-behavior: smooth;
-        transition: background 0.3s, color 0.3s;
-    }
-
-    header {
-        text-align: center;
-        padding: 120px 20px 80px;
-        background: linear-gradient(135deg, #6366f1, #8b5cf6);
-        color: white;
-    }
-
-    header h1 {
-        font-size: 48px;
-        margin-bottom: 10px;
-        animation: fadeInDown 1s ease;
-    }
-
-    header p {
-        font-size: 20px;
-        opacity: 0.9;
-        animation: fadeInUp 1.2s ease;
-    }
-
-    /* Smooth fade animations */
-    @keyframes fadeInDown {
-        from { transform: translateY(-20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes fadeInUp {
-        from { transform: translateY(20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-
-    .container {
-        max-width: 1000px;
-        margin: auto;
-        padding: 50px 20px;
-    }
-
-    .section-title {
-        font-size: 32px;
-        font-weight: 700;
-        margin-bottom: 30px;
-        color: var(--accent);
-        animation: fadeInUp 1s ease;
-    }
-
-    .project-card {
-        background: var(--card);
-        padding: 25px;
-        border-radius: 15px;
-        margin-bottom: 25px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-    }
-
-    .project-card h3 {
-        margin: 0;
-        font-size: 22px;
-        color: var(--accent2);
-    }
-
-    .skill {
-        display: inline-block;
-        background: var(--accent2);
-        color: white;
-        padding: 8px 16px;
-        border-radius: 20px;
-        margin: 5px;
-        font-size: 14px;
-        transition: transform 0.2s;
-    }
-
-    .skill:hover {
-        transform: scale(1.1);
-    }
-
-    /* Experience Timeline */
-    .timeline {
-        border-left: 3px solid var(--accent);
-        padding-left: 30px;
-        margin-left: 10px;
-    }
-
-    .timeline-item {
-        margin-bottom: 30px;
-        position: relative;
-    }
-
-    .timeline-item::before {
-        content: "●";
-        position: absolute;
-        left: -20px;
-        top: 0;
-        color: var(--accent2);
-        font-size: 20px;
-    }
-
-    /* Buttons */
-    .button {
-        background: var(--accent);
-        color: white;
-        padding: 12px 20px;
-        border-radius: 25px;
-        font-size: 16px;
-        text-decoration: none;
-        display: inline-block;
-        margin-top: 20px;
-        transition: background 0.2s;
-    }
-
-    .button:hover {
-        background: var(--accent2);
-    }
-
-    /* Dark Mode Toggle */
-    .toggle-btn {
-        position: fixed;
-        right: 20px;
-        top: 20px;
-        background: var(--card);
-        color: var(--text);
-        padding: 12px;
-        border-radius: 50%;
-        cursor: pointer;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    footer {
-        text-align: center;
-        padding: 40px;
-        background: var(--card);
-        margin-top: 40px;
-    }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sathwik Kuchana | AI Engineer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 </head>
-
 <body>
+  <!-- Background gradient + particles -->
+  <div class="bg-gradient"></div>
+  <canvas id="particle-canvas"></canvas>
 
-<!-- Dark Mode Toggle -->
-<div class="toggle-btn" onclick="toggleTheme()">
-    <i class="fa-solid fa-circle-half-stroke"></i>
-</div>
+  <header class="nav">
+    <div class="nav-left">
+      <div class="logo-dot"></div>
+      <span class="logo-text">Sathwik<span class="accent">.AI</span></span>
+    </div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<header>
-    <h1>Sathwik Kuchana</h1>
-    <p>AI Engineer • Machine Learning • LLM Fine-Tuning • RAG Architect • Computer Vision</p>
-    <p>📍 Jersey City, NJ | 📧 kssathwik@outlook.com |
-        <a href="https://www.linkedin.com/in/sathwik-kuchana/" style="color:white;">LinkedIn</a>
-    </p>
-    <a class="button" href="Sathwik_Kuchana_Resume.pdf" download>⬇ Download Resume</a>
-</header>
-
-<div class="container">
-
-    <h2 class="section-title">About Me</h2>
-    <p>
-        I am an AI Engineer specializing in end-to-end machine learning systems, including LLM fine-tuning (LoRA/QLoRA),
-        computer vision, RAG pipelines, and real-time deployment.  
-        I have built production-grade systems in healthcare and designed multi-agent LLM frameworks with safety,
-        critique, and clinician-in-the-loop reinforcement.  
-        My academic capstone focuses on climate adaptation evidence synthesis using fine-tuned LLMs.
-    </p>
-
-    <h2 class="section-title">Experience Timeline</h2>
-
-    <div class="timeline">
-
-        <div class="timeline-item">
-            <h3>AI Engineer — ValuAI (2025 – Present)</h3>
-            <p>
-                Architecting clinical RAG pipelines, multi-agent critique systems, real-time LLM deployments,
-                and clinician feedback reinforcement loops. Leading interns, designing scalable pipelines,
-                deploying Bedrock/SageMaker models, and building treatment-advisor agents.
-            </p>
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-content">
+        <p class="hero-kicker">AI Engineer · LLMs · RAG · Agentic Systems</p>
+        <h1 class="hero-title">
+          Building <span class="accent">safe & reliable</span> AI systems
+          for the real world.
+        </h1>
+        <p class="hero-subtitle">
+          I’m <span class="accent-underline">Sathwik Kuchana</span>, an AI Engineer
+          crafting production-grade LLM and multi-agent systems for healthcare,
+          fintech, and robotics—combining rigorous research with hands-on deployment.
+        </p>
+        <div class="hero-actions">
+          <a href="Sathwik_Kuchana_Resume.pdf" class="btn primary" target="_blank">
+            View Resume
+          </a>
+          <a href="#contact" class="btn ghost">
+            Let’s Collaborate
+          </a>
         </div>
-
-        <div class="timeline-item">
-            <h3>Graduate Research — Climate Adaptation LLM Capstone</h3>
-            <p>
-                Fine-tuned LLaMA, Mistral, Falcon with QLoRA on structured GAMI dataset.
-                Built extraction pipelines for geographic, stakeholder, and adaptation depth reasoning.
-            </p>
+        <div class="hero-tags">
+          <span>LLMs & Agents</span>
+          <span>RAG Pipelines</span>
+          <span>Multi-modal ML</span>
+          <span>Robotics & CV</span>
         </div>
+      </div>
 
-    </div>
+      <div class="hero-visual">
+        <div class="hero-photo-wrapper">
+          <img src="assets/headshot.png" alt="Sathwik Kuchana" class="hero-photo" />
+          <div class="hero-photo-glow"></div>
+        </div>
+        <div class="brain-orbit">
+          <div class="brain-core">
+            <!-- stylized "3D" brain -->
+            <div class="brain-sphere"></div>
+            <span class="brain-label">LLM Brain</span>
+          </div>
+          <div class="brain-orbit-ring brain-orbit-ring-1"></div>
+          <div class="brain-orbit-ring brain-orbit-ring-2"></div>
+        </div>
+        <div class="hero-stat-card">
+          <p class="stat-number">20k+</p>
+          <p class="stat-label">Synthetic patient profiles generated for training & eval</p>
+        </div>
+        <div class="hero-stat-card stat-secondary">
+          <p class="stat-number">3+</p>
+          <p class="stat-label">Years building ML & AI systems</p>
+        </div>
+      </div>
+    </section>
 
-    <h2 class="section-title">Featured Projects</h2>
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="section-header">
+        <h2>About</h2>
+        <p>From academic research to production AI systems.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text card">
+          <p>
+            I’m an <strong>AI Engineer</strong> currently working at <strong>ValuAI</strong>,
+            where I design and deploy clinician–patient engagement systems powered by
+            LLMs, multi-agent orchestration, and robust RAG pipelines.
+          </p>
+          <p>
+            My <strong>Master’s in Artificial Intelligence (Yeshiva University)</strong>
+            focused on applied research—especially my capstone,
+            <em>“Climate Change Evidence Synthesis Using LLMs”</em>, where I
+            fine-tuned <strong>LLaMA, Mistral, and Falcon</strong> on the GAMI
+            dataset to extract structured climate adaptation evidence.
+          </p>
+          <p>
+            I love working end-to-end: <strong>data engineering → training →
+            evaluation → deployment</strong>, and I’m particularly excited about
+            building <strong>safe, inspectable agents</strong> that can collaborate
+            with humans in healthcare and robotics.
+          </p>
+        </div>
+        <div class="about-meta">
+          <div class="about-meta-item card">
+            <h3>Current Focus</h3>
+            <ul>
+              <li>LLM agents for diagnosis & treatment planning</li>
+              <li>Robust RAG for clinical & scientific literature</li>
+              <li>Human-in-the-loop evaluation pipelines</li>
+            </ul>
+          </div>
+          <div class="about-meta-item card">
+            <h3>Tech Stack</h3>
+            <p>Python · C++ · PyTorch · TensorFlow · FastAPI · ROS2 · AWS · Docker</p>
+          </div>
+          <div class="about-meta-item card">
+            <h3>Location</h3>
+            <p>Jersey City, NJ · open to relocation for the right opportunity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="project-card">
-        <h3>🌎 LLM Fine-Tuning for Climate Adaptation Evidence</h3>
-        <p>Fine-tuned LLaMA, Mistral & Falcon using LoRA/QLoRA on a custom GAMI dataset. Extracts structured climate insights from scientific papers.</p>
-    </div>
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="section-header">
+        <h2>Experience</h2>
+        <p>Hands-on engineering across healthcare, fintech, and automation.</p>
+      </div>
 
-    <div class="project-card">
-        <h3>🩺 Clinical RAG Diagnosis Pipeline (Production-Grade)</h3>
-        <p>Built multi-agent diagnosis + critique system (“Dr. Challenge”) with a clinician-in-the-loop improvement workflow.</p>
-    </div>
+      <div class="timeline">
+        <article class="timeline-item card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>AI Engineer · ValuAI.io</h3>
+            <p class="timeline-meta">Apr 2025 – Present · San Diego, CA (Remote)</p>
+            <ul>
+              <li>
+                Architecting an AI-driven clinician–patient platform using
+                <strong>AWS Bedrock, LangChain, FastAPI, Redis, MongoDB</strong>.
+              </li>
+              <li>
+                Built a <strong>RAG pipeline for diagnosis & treatment plans</strong>
+                grounded in PubMed and clinical guidelines.
+              </li>
+              <li>
+                Designed agents like <strong>“Dr. Challenge”</strong> to critique
+                and stress-test treatment suggestions before clinicians review them.
+              </li>
+              <li>
+                Coordinating a <strong>QC loop with human clinicians</strong>,
+                integrating their feedback to continuously improve system behavior.
+              </li>
+            </ul>
+          </div>
+        </article>
 
-    <div class="project-card">
-        <h3>🩻 Hybrid CNN–ViT Radiograph Analysis</h3>
-        <p>79% accuracy on vertebral heart size detection using a geometric-aware CNN-ViT architecture.</p>
-    </div>
+        <article class="timeline-item card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>AI Development Intern · Nixacom</h3>
+            <p class="timeline-meta">Mar 2025 – May 2025 · North Carolina</p>
+            <ul>
+              <li>
+                Built liveness detection workflows using
+                <strong>OpenCV, MediaPipe, DeepFace</strong> on short selfie videos.
+              </li>
+              <li>
+                Automated finance application processing with
+                <strong>LLM-based document intelligence</strong> and CrewAI agents.
+              </li>
+            </ul>
+          </div>
+        </article>
 
-    <div class="project-card">
-        <h3>🎯 Object Localization CNN Regression</h3>
-        <p>CNN predicts bounding boxes in synthetic MNIST dataset, with IoU evaluation + visualization.</p>
-    </div>
+        <article class="timeline-item card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Software Engineer · Jocata Financial</h3>
+            <p class="timeline-meta">Sep 2021 – Aug 2023 · Hyderabad, India</p>
+            <ul>
+              <li>Developed and fine-tuned models using GPT/BERT and HuggingFace.</li>
+              <li>
+                Implemented <strong>RAG workflows</strong> with Pinecone and vector
+                databases for enterprise decision support.
+              </li>
+              <li>
+                Owned CI/CD pipelines (Jenkins, GitLab) for ML deployments on AWS.
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <h2 class="section-title">Skills</h2>
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="section-header">
+        <h2>Highlighted Projects</h2>
+        <p>Production systems & research that represent my strongest work.</p>
+      </div>
 
-    <div class="skills-container">
-        <div class="skill">Python</div>
-        <div class="skill">C++</div>
-        <div class="skill">PyTorch</div>
-        <div class="skill">TensorFlow</div>
-        <div class="skill">LoRA / QLoRA</div>
-        <div class="skill">Transformers</div>
-        <div class="skill">CNNs / ViT</div>
-        <div class="skill">FastAPI</div>
-        <div class="skill">Docker</div>
-        <div class="skill">AWS Bedrock</div>
-        <div class="skill">SageMaker</div>
-        <div class="skill">Redis</div>
-        <div class="skill">MongoDB</div>
-        <div class="skill">FAISS</div>
-        <div class="skill">LangChain</div>
-        <div class="skill">RAG Architectures</div>
-    </div>
+      <div class="projects-grid">
+        <article class="project-card card">
+          <div class="project-tag">Capstone · Yeshiva University</div>
+          <h3>Climate Change Evidence Synthesis using LLMs</h3>
+          <p>
+            Built an LLM pipeline to extract structured climate adaptation evidence
+            from scientific literature using the GAMI dataset. Fine-tuned
+            <strong>LLaMA, Mistral, and Falcon</strong> with LoRA/QLoRA and designed
+            prompts for geographic extraction, stakeholder identification, and
+            adaptation depth classification.
+          </p>
+          <ul class="project-tech">
+            <li>PyTorch</li><li>LLaMA / Mistral / Falcon</li><li>LoRA / QLoRA</li><li>GAMI dataset</li>
+          </ul>
+        </article>
 
-</div>
+        <article class="project-card card">
+          <div class="project-tag">Production · Healthcare</div>
+          <h3>Clinician–Patient Multi-Agent Treatment Advisor</h3>
+          <p>
+            At ValuAI, engineered a multi-agent system combining a
+            <strong>treatment advisor</strong> agent, a <strong>“Dr. Challenge”</strong>
+            critique agent, and a human clinician in the loop. The system generates
+            diagnoses and care plans, challenges them for safety and completeness,
+            and incorporates clinician feedback back into the RAG pipeline.
+          </p>
+          <ul class="project-tech">
+            <li>AWS Bedrock</li><li>LangChain</li><li>RAG</li><li>Redis · MongoDB</li>
+          </ul>
+        </article>
 
-<footer>
-    © 2025 Sathwik Kuchana • AI Engineer Portfolio
-</footer>
+        <article class="project-card card">
+          <div class="project-tag">Computer Vision</div>
+          <h3>Vertebral Heart Size Detection in Canine Radiographs</h3>
+          <p>
+            Developed a hybrid <strong>CNN + Vision Transformer</strong> model to
+            automate vertebral heart size detection, achieving strong test
+            performance while enforcing geometric consistency via validation layers.
+          </p>
+          <ul class="project-tech">
+            <li>PyTorch</li><li>CNN</li><li>ViT</li><li>Medical Imaging</li>
+          </ul>
+        </article>
 
-<script>
-function toggleTheme() {
-    const current = document.documentElement.getAttribute("data-theme");
-    document.documentElement.setAttribute("data-theme", current === "light" ? "dark" : "light");
-}
-</script>
+        <article class="project-card card">
+          <div class="project-tag">Document Intelligence · Fintech</div>
+          <h3>Automated Loan Application & Liveness Pipeline</h3>
+          <p>
+            Built an end-to-end pipeline that parses IDs, paystubs, and videos,
+            combining <strong>OCR, LLM extraction, and liveness detection</strong>
+            to support automated credit risk decisions.
+          </p>
+          <ul class="project-tech">
+            <li>CrewAI</li><li>OpenCV</li><li>DeepFace</li><li>LLM Agents</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
+    <!-- GALLERY -->
+    <section class="section" id="gallery">
+      <div class="section-header">
+        <h2>Gallery</h2>
+        <p>Moments from my AI journey – graduation & mentorship.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="gallery-item card">
+          <img src="assets/grad-hero.jpg" alt="Graduation ceremony" />
+          <figcaption>Receiving my Master’s in Artificial Intelligence at Yeshiva University.</figcaption>
+        </figure>
+
+        <figure class="gallery-item card">
+          <img src="assets/professor.jpg" alt="With professor" />
+          <figcaption>With my professor and mentor after the ceremony.</figcaption>
+        </figure>
+
+        <figure class="gallery-item card">
+          <img src="assets/grad-1.jpg" alt="Stage moment" />
+          <figcaption>A quick handshake moment on stage.</figcaption>
+        </figure>
+
+        <!-- Add more coursework / lab photos later -->
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="section-header">
+        <h2>Contact</h2>
+        <p>Open to roles in AI Engineering, Agentic Systems, and Robotics ML.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="card contact-card">
+          <h3>Let’s build something</h3>
+          <p>
+            If you’re working on AI for healthcare, robotics, or high-impact
+            decision systems and need someone who can own both
+            <strong>research and deployment</strong>, I’d love to chat.
+          </p>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> <a href="mailto:kssathwik@outlook.com">kssathwik@outlook.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+12017059409">+1 (201) 705-9409</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sathwik-kuchana/" target="_blank">linkedin.com/in/sathwik-kuchana</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/" target="_blank">github.com/ &larr; add your username</a></li>
+          </ul>
+        </div>
+        <form class="card contact-form" action="mailto:kssathwik@outlook.com" method="post" enctype="text/plain">
+          <h3>Quick message</h3>
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="4" placeholder="Tell me about your project..."></textarea>
+          </label>
+          <button type="submit" class="btn primary full-width">Send</button>
+          <p class="contact-note">This uses your email client to send the message.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Sathwik Kuchana.</span>
+    <span>Built with ❤️, LLMs & too many experiments.</span>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
