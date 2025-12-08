@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sathwik Kuchana – AI Engineer Portfolio</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/4f2d662c44.js" crossorigin="anonymous"></script>
+
+<style>
+    :root {
+        --bg: #0f0f15;
+        --card: #171722;
+        --text: #ffffff;
+        --accent: #6366f1;
+        --accent2: #8b5cf6;
+    }
+
+    [data-theme="light"] {
+        --bg: #f5f5f5;
+        --card: #ffffff;
+        --text: #111827;
+        --accent: #4f46e5;
+        --accent2: #6366f1;
+    }
+
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        scroll-behavior: smooth;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+        text-align: center;
+        padding: 120px 20px 80px;
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: white;
+    }
+
+    header h1 {
+        font-size: 48px;
+        margin-bottom: 10px;
+        animation: fadeInDown 1s ease;
+    }
+
+    header p {
+        font-size: 20px;
+        opacity: 0.9;
+        animation: fadeInUp 1.2s ease;
+    }
+
+    /* Smooth fade animations */
+    @keyframes fadeInDown {
+        from { transform: translateY(-20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: auto;
+        padding: 50px 20px;
+    }
+
+    .section-title {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: var(--accent);
+        animation: fadeInUp 1s ease;
+    }
+
+    .project-card {
+        background: var(--card);
+        padding: 25px;
+        border-radius: 15px;
+        margin-bottom: 25px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    .project-card h3 {
+        margin: 0;
+        font-size: 22px;
+        color: var(--accent2);
+    }
+
+    .skill {
+        display: inline-block;
+        background: var(--accent2);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        margin: 5px;
+        font-size: 14px;
+        transition: transform 0.2s;
+    }
+
+    .skill:hover {
+        transform: scale(1.1);
+    }
+
+    /* Experience Timeline */
+    .timeline {
+        border-left: 3px solid var(--accent);
+        padding-left: 30px;
+        margin-left: 10px;
+    }
+
+    .timeline-item {
+        margin-bottom: 30px;
+        position: relative;
+    }
+
+    .timeline-item::before {
+        content: "●";
+        position: absolute;
+        left: -20px;
+        top: 0;
+        color: var(--accent2);
+        font-size: 20px;
+    }
+
+    /* Buttons */
+    .button {
+        background: var(--accent);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 25px;
+        font-size: 16px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 20px;
+        transition: background 0.2s;
+    }
+
+    .button:hover {
+        background: var(--accent2);
+    }
+
+    /* Dark Mode Toggle */
+    .toggle-btn {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        background: var(--card);
+        color: var(--text);
+        padding: 12px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    footer {
+        text-align: center;
+        padding: 40px;
+        background: var(--card);
+        margin-top: 40px;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Dark Mode Toggle -->
+<div class="toggle-btn" onclick="toggleTheme()">
+    <i class="fa-solid fa-circle-half-stroke"></i>
+</div>
+
+<header>
+    <h1>Sathwik Kuchana</h1>
+    <p>AI Engineer • Machine Learning • LLM Fine-Tuning • RAG Architect • Computer Vision</p>
+    <p>📍 Jersey City, NJ | 📧 kssathwik@outlook.com |
+        <a href="https://www.linkedin.com/in/sathwik-kuchana/" style="color:white;">LinkedIn</a>
+    </p>
+    <a class="button" href="Sathwik_Kuchana_Resume.pdf" download>⬇ Download Resume</a>
+</header>
+
+<div class="container">
+
+    <h2 class="section-title">About Me</h2>
+    <p>
+        I am an AI Engineer specializing in end-to-end machine learning systems, including LLM fine-tuning (LoRA/QLoRA),
+        computer vision, RAG pipelines, and real-time deployment.  
+        I have built production-grade systems in healthcare and designed multi-agent LLM frameworks with safety,
+        critique, and clinician-in-the-loop reinforcement.  
+        My academic capstone focuses on climate adaptation evidence synthesis using fine-tuned LLMs.
+    </p>
+
+    <h2 class="section-title">Experience Timeline</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <h3>AI Engineer — ValuAI (2025 – Present)</h3>
+            <p>
+                Architecting clinical RAG pipelines, multi-agent critique systems, real-time LLM deployments,
+                and clinician feedback reinforcement loops. Leading interns, designing scalable pipelines,
+                deploying Bedrock/SageMaker models, and building treatment-advisor agents.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>Graduate Research — Climate Adaptation LLM Capstone</h3>
+            <p>
+                Fine-tuned LLaMA, Mistral, Falcon with QLoRA on structured GAMI dataset.
+                Built extraction pipelines for geographic, stakeholder, and adaptation depth reasoning.
+            </p>
+        </div>
+
+    </div>
+
+    <h2 class="section-title">Featured Projects</h2>
+
+    <div class="project-card">
+        <h3>🌎 LLM Fine-Tuning for Climate Adaptation Evidence</h3>
+        <p>Fine-tuned LLaMA, Mistral & Falcon using LoRA/QLoRA on a custom GAMI dataset. Extracts structured climate insights from scientific papers.</p>
+    </div>
+
+    <div class="project-card">
+        <h3>🩺 Clinical RAG Diagnosis Pipeline (Production-Grade)</h3>
+        <p>Built multi-agent diagnosis + critique system (“Dr. Challenge”) with a clinician-in-the-loop improvement workflow.</p>
+    </div>
+
+    <div class="project-card">
+        <h3>🩻 Hybrid CNN–ViT Radiograph Analysis</h3>
+        <p>79% accuracy on vertebral heart size detection using a geometric-aware CNN-ViT architecture.</p>
+    </div>
+
+    <div class="project-card">
+        <h3>🎯 Object Localization CNN Regression</h3>
+        <p>CNN predicts bounding boxes in synthetic MNIST dataset, with IoU evaluation + visualization.</p>
+    </div>
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-container">
+        <div class="skill">Python</div>
+        <div class="skill">C++</div>
+        <div class="skill">PyTorch</div>
+        <div class="skill">TensorFlow</div>
+        <div class="skill">LoRA / QLoRA</div>
+        <div class="skill">Transformers</div>
+        <div class="skill">CNNs / ViT</div>
+        <div class="skill">FastAPI</div>
+        <div class="skill">Docker</div>
+        <div class="skill">AWS Bedrock</div>
+        <div class="skill">SageMaker</div>
+        <div class="skill">Redis</div>
+        <div class="skill">MongoDB</div>
+        <div class="skill">FAISS</div>
+        <div class="skill">LangChain</div>
+        <div class="skill">RAG Architectures</div>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 Sathwik Kuchana • AI Engineer Portfolio
+</footer>
+
+<script>
+function toggleTheme() {
+    const current = document.documentElement.getAttribute("data-theme");
+    document.documentElement.setAttribute("data-theme", current === "light" ? "dark" : "light");
+}
+</script>
+
+</body>
+</html>
